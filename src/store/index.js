@@ -12,14 +12,17 @@ const cardsStore = defineStore('digimons', {
   },
   actions: {
     async fetchAllCards() {
+      const heartstoneAPI = 'https://omgvamp-hearthstone-v1.p.rapidapi.com'
+      const rapidapiKey = "d3cace0953msha451c129f4178c0p191a0ejsn09a308a42bd2"
+      const reapidapiHost ="omgvamp-hearthstone-v1.p.rapidapi.com"
       const settings = {
         async: true,
         crossDomain: true,
-        url: `${import.meta.env.VITE_BASE_URL_CARDS}/cards/factions/alliance`,
+        url: `${heartstoneAPI}/cards/factions/alliance`,
         method: 'GET',
         headers: {
-          'X-RapidAPI-Key': `${import.meta.env.VITE_RAPIDAPI_KEY}`,
-          'x-rapidapi-host': `${import.meta.env.VITE_RAPIDAPI_HOST}`,
+          'X-RapidAPI-Key': rapidapiKey,
+          'x-rapidapi-host': reapidapiHost,
         },
       }
 
